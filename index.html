@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Johir Generator</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+<div id="app" class="dark-mode">
+    <header>
+        <h1>JOHIR GENERATOR V1.3</h1>
+    </header>
+    <div class="form-container">
+        <label for="mode-select">Mode:</label>
+        <select id="mode-select" onchange="handleModeChange()">
+            <option value="word">Add Word</option>
+            <option value="synonym">Synonym Replacement</option>
+            <option value="brainrot">Brain Rot Mode</option>
+            <option value="shakespeare">Shakespearean Mode</option>
+        </select>
+        <div id="word-to-add-container" class="hidden">
+            <label for="word-to-add">Word to add:</label>
+            <input type="text" id="word-to-add" placeholder="Enter word to add">
+        </div>
+    </div>
+    <div class="text-box-container">
+        <textarea id="text-entry" class="text-box" placeholder="Enter your text here. Ensure that the input has punctuation."></textarea>
+        <button id="modify-text" class="circular-button" onclick="processText()">
+            <i class="fas fa-pencil-alt"></i>
+        </button>
+    </div>
+    <div class="text-box-container">
+        <textarea id="output-text" class="text-box" placeholder="Output will appear here."></textarea>
+        <button id="copy-clipboard" class="circular-button" onclick="copyToClipboard()">
+            <i class="fa fa-copy"></i>
+        </button>
+        <button id="clear-text" class="circular-button" onclick="clearTextFields()">
+            <i class="fas fa-eraser"></i>
+        </button>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
